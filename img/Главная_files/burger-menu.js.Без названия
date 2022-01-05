@@ -1,0 +1,41 @@
+let menuBtn = document.querySelector('.menu-btn');
+let menu = document.querySelector('.menu');
+
+menuBtn.addEventListener('click', function(){
+	menuBtn.classList.toggle('active');
+	menu.classList.toggle('active');
+})
+
+let currentUrl = window.location.pathname;
+console.log(currentUrl)
+
+let d_m = document.getElementById('d_href_main');
+let d_a = document.getElementById('d_href_about');
+let d_f = document.getElementById('d_href_faq');
+let d_r = document.getElementById('d_href_rev');
+
+if (currentUrl == "/index.html"){
+	d_m.style.borderBottom = "1px solid #000"
+}
+else if (currentUrl == "/about.html"){
+	d_a.style.borderBottom = "1px solid #000"
+}
+else if (currentUrl == "/faq.html"){
+	d_f.style.borderBottom = "1px solid #000"
+}
+else if (currentUrl == "/reviews.html"){
+	d_r.style.borderBottom = "1px solid #000"
+}
+
+elem = document.querySelector(".m_link");
+let currUrl = currentUrl.substring(1);
+let i = 0
+
+for (let el of Object.keys(elem)) {
+    if (currUrl = el[i].getAttribute("href")){
+		i.style.backgroundColor = "#DB4BFF";
+		i.style.color = "#fff"
+	}
+	i++;
+}
+//d_m.getAttribute("href")
